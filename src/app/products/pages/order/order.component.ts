@@ -8,6 +8,7 @@ import { Color, Hero } from '../../interfaces/hero.i';
 })
 export class OrderComponent {
   public isUpperCase: boolean = false;
+  public orderBy?: keyof Hero;
   public heroes: Hero[] = [
     {
       name: 'Superman',
@@ -38,5 +39,9 @@ export class OrderComponent {
 
   toggleUpperCase(): void {
     this.isUpperCase = !this.isUpperCase;
+  }
+
+  changeOrderBy(value: keyof Hero) {
+    this.orderBy = value;
   }
 }
